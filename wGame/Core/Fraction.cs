@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 namespace wGame.Core
 {
@@ -165,6 +166,17 @@ namespace wGame.Core
         public static bool operator >(Fraction a, Fraction b)
         {
             return b < a;
+        }
+
+        public override string ToString()
+        {
+            if (IsNaN) return "NaN";
+            if (IsPositiveInfinity) return "+Inf";
+            if (IsNegativeInfinity) return "-Inf";
+            if (Denominator == 1L) return Counter.ToString(CultureInfo.InvariantCulture);
+
+            return Counter.ToString(CultureInfo.InvariantCulture) + "/" +
+                   Denominator.ToString(CultureInfo.InvariantCulture);
         }
     }
 }
