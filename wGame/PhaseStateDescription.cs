@@ -3,11 +3,12 @@ using wGame.Core;
 
 namespace wGame
 {
-    public class Tuple
+    public class PhaseStateDescription
     {
         public Fraction[] UpLimits;
+        public ulong[] Count;
 
-        public static Tuple CreateInitial(Fraction frac)
+        public static PhaseStateDescription CreateInitial(Fraction frac)
         {
             if (ReferenceEquals(frac, null))
                 throw new ArgumentNullException("frac");
@@ -17,21 +18,21 @@ namespace wGame
 
             var ceil = (1L/frac).Ceil();
 
-            var tuple = new Tuple
+            var tuple = new PhaseStateDescription
             {
-                UpLimits = new Fraction[ceil]
+                UpLimits = new Fraction[ceil],
+                Count = new ulong[ceil]
             };
 
             var q = frac;
             for (var i = 0; i < ceil; i++)
             {
                 tuple.UpLimits[i] = q;
+                tuple.Count[i] = 0;
                 q += frac;
             }
 
-            if (tuple.UpLimits[tuple.UpLimits.Length - 1] > 1L)
-                tuple.UpLimits[tuple.UpLimits.Length - 1] = 1L;
-
+            tuple.UpLimits[tuple.UpLimits.Length - 1] = 1L;
             return tuple;
         }
     }

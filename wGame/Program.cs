@@ -8,7 +8,7 @@ namespace wGame
         static void Main(string[] args)
         {
             var f = new Fraction(2, 5);
-            var t = Tuple.CreateInitial(f);
+            var t = PhaseStateDescription.CreateInitial(f);
 
             foreach (var fraction in t.UpLimits)
             {
