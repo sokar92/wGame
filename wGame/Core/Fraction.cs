@@ -181,5 +181,30 @@ namespace wGame.Core
             return Counter.ToString(CultureInfo.InvariantCulture) + "/" +
                    Denominator.ToString(CultureInfo.InvariantCulture);
         }
+
+        public long Floor()
+        {
+            if (IsNaN || IsInfinity)
+                throw new Exception("Cannot get floor from NaN or Inf");
+
+            if (IsNegative)
+                return (-this).Ceil();
+
+            return Counter/Denominator;
+        }
+
+        public long Ceil()
+        {
+            if (IsNaN || IsInfinity)
+                throw new Exception("Cannot get floor from NaN or Inf");
+
+            if (IsNegative)
+                return (-this).Floor();
+
+            var q = Counter/Denominator;
+            var r = Counter - Denominator*q;
+
+            return r == 0L ? q : q + 1L;
+        }
     }
 }
