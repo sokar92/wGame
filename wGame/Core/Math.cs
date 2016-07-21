@@ -9,7 +9,7 @@ namespace wGame.Core
             if (a <= 0 || b <= 0)
                 throw new ArgumentException("gcd cannot be computed for nonpositive values");
 
-            while (a != 0 || b != 0)
+            while (a != 0 && b != 0)
             {
                 if (a < b) b %= a;
                 else a %= b;
