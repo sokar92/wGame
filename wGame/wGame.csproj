@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Core\Fraction.cs" />
     <Compile Include="Core\Math.cs" />
+    <Compile Include="Graph\Vertex.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -148,24 +148,27 @@ namespace wGame.Core
             return !(a == b);
         }
 
-        public static bool operator <=(Fraction a, Fraction b)
-        {
-            return (a == b) || a.CompareTo(b) < 0;
-        }
-
-        public static bool operator >=(Fraction a, Fraction b)
-        {
-            return b <= a;
-        }
-
         public static bool operator <(Fraction a, Fraction b)
         {
+            if (ReferenceEquals(a, null))
+                return !ReferenceEquals(b, null);
+
             return a.CompareTo(b) < 0;
         }
 
         public static bool operator >(Fraction a, Fraction b)
         {
             return b < a;
+        }
+
+        public static bool operator <=(Fraction a, Fraction b)
+        {
+            return (a == b) || (a < b);
+        }
+
+        public static bool operator >=(Fraction a, Fraction b)
+        {
+            return b <= a;
         }
 
         public override string ToString()
