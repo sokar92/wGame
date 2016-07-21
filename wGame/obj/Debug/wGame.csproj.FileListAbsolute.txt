@@ -1,0 +1,7 @@
+c:\users\pms2\documents\visual studio 2013\Projects\wGame\wGame\bin\Debug\wGame.exe.config
+C:\Users\pms2\Documents\GitHub\wGame\wGame\bin\Debug\wGame.exe.config
+C:\Users\pms2\Documents\GitHub\wGame\wGame\bin\Debug\wGame.exe
+C:\Users\pms2\Documents\GitHub\wGame\wGame\bin\Debug\wGame.pdb
+C:\Users\pms2\Documents\GitHub\wGame\wGame\obj\Debug\wGame.csprojResolveAssemblyReference.cache
+C:\Users\pms2\Documents\GitHub\wGame\wGame\obj\Debug\wGame.exe
+C:\Users\pms2\Documents\GitHub\wGame\wGame\obj\Debug\wGame.pdb
